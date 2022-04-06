@@ -1,17 +1,18 @@
 import {vi} from 'vitest';
-import {faker} from '@faker-js/faker';
-import {factory} from 'node-factory';
+import faker from '@micra/faker/complete';
 
-export const ErrorMessageFactory = factory<Micra.ErrorMessage>((fake) => ({
-  status: 500,
-  title: fake.lorem.words(3),
-}));
+export const ErrorMessageFactory = faker.factory<Micra.ErrorMessage>(
+  (fake) => ({
+    status: 500,
+    title: fake.uuid(),
+  }),
+);
 
-export const ValidationErrorExtrasFactory = factory<
+export const ValidationErrorExtrasFactory = faker.factory<
   Micra.ValidationErrorExtras<string>
 >((fake) => ({
-  field: fake.lorem.word(3),
-  message: fake.lorem.sentence(),
+  field: fake.string(),
+  message: fake.uuid(),
 }));
 
 export const MockError = class MockError implements Micra.Error {
@@ -22,10 +23,10 @@ export const MockError = class MockError implements Micra.Error {
     (this as any)['__MICRA_ERROR__'] = 'Micra.Error';
   }
 
-  statusCode: number = faker.datatype.number();
+  statusCode: number = faker.number();
   serialize = vi.fn();
-  name: string = faker.lorem.words(3);
-  message: string = faker.lorem.sentence();
+  name: string = faker.uuid();
+  message: string = faker.uuid();
   stack?: string | undefined = undefined;
 };
 

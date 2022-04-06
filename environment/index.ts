@@ -1,14 +1,14 @@
-import {factory} from 'node-factory';
+import faker from '@micra/faker/complete';
 import {vi} from 'vitest';
 import {MockEventEmitter} from '../event-emitter';
 
-export const EnvironmentSetEventFactory = factory<
+export const EnvironmentSetEventFactory = faker.factory<
   Micra.EnvironmentEvents['set']
 >(
   (fake) =>
     ({
-      key: fake.lorem.word(),
-      value: fake.lorem.sentence(),
+      key: fake.alpha(),
+      value: fake.uuid(),
     } as Micra.EnvironmentEvents['set']),
 );
 
