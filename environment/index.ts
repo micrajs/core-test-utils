@@ -1,6 +1,6 @@
 import faker from '@micra/faker/complete';
-import {vi} from 'vitest';
-import {MockEventEmitter} from '../event-emitter';
+import {MockEventEmitter} from '@/event-emitter';
+import {fn} from '@/spy';
 
 export const EnvironmentSetEventFactory = faker.factory<
   Micra.EnvironmentEvents['set']
@@ -16,10 +16,10 @@ export const MockEnvironment = class MockEnvironment
   extends MockEventEmitter
   implements Micra.Environment
 {
-  all = vi.fn();
-  get = vi.fn();
-  has = vi.fn();
-  init = vi.fn();
-  initSync = vi.fn();
-  validate = vi.fn();
+  all = fn();
+  get = fn();
+  has = fn();
+  init = fn();
+  initSync = fn();
+  validate = fn();
 };

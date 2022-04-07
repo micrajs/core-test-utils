@@ -3,7 +3,7 @@ import {defineConfig} from '@micra/vite-config/library';
 export default defineConfig({
   build: {
     rollupOptions: {
-      external: ['@micra/core', '@micra/faker/complete', 'vitest'],
+      external: ['@micra/core', '@micra/faker/complete', 'tinyspy'],
     },
   },
 });

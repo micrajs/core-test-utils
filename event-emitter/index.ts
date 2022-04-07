@@ -1,9 +1,9 @@
-import {vi} from 'vitest';
+import {fn} from '@/spy';
 
 export const MockEventEmitter = class MockEventEmitter
   implements Micra.EventEmitter
 {
-  on = vi.fn();
-  emit = vi.fn();
-  emitSync = vi.fn();
+  on = fn();
+  emit = fn();
+  emitSync = fn();
 };

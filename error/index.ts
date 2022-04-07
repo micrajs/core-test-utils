@@ -1,5 +1,5 @@
-import {vi} from 'vitest';
 import faker from '@micra/faker/complete';
+import {fn} from '@/spy';
 
 export const ErrorMessageFactory = faker.factory<Micra.ErrorMessage>(
   (fake) => ({
@@ -24,7 +24,7 @@ export const MockError = class MockError implements Micra.Error {
   }
 
   statusCode: number = faker.number();
-  serialize = vi.fn();
+  serialize = fn();
   name: string = faker.uuid();
   message: string = faker.uuid();
   stack?: string | undefined = undefined;
@@ -42,8 +42,8 @@ export const MockValidationError = class MockValidationError<
   }
 
   statusCode: 422 = 422;
-  hasAny = vi.fn();
-  has = vi.fn();
-  get = vi.fn();
-  set = vi.fn();
+  hasAny = fn();
+  has = fn();
+  get = fn();
+  set = fn();
 };
