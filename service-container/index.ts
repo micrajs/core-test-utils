@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import type {Static} from '@micra/core/utilities/Static';
 import {fn} from '@/spy';
-import {MockEventEmitter} from '..';
+import {MockEventEmitter} from '@/event-emitter';
 
 export const MockServiceContainer = class MockServiceContainer
   extends MockEventEmitter
