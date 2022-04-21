@@ -16,8 +16,8 @@ export const MockAsyncKernel = class MockAsyncKernel implements Micra.Kernel {
 };
 
 export const MockKernel = class MockKernel implements Micra.Kernel {
-  run = vi.fn();
-  boot = vi.fn();
+  run = fn();
+  boot = fn();
   /**
    * It allows you to pass custom mocked functions which will be set to the instance.
    *
