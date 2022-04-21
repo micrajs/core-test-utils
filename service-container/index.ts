@@ -3,7 +3,7 @@ import type {Static} from '@micra/core/utilities/Static';
 import {fn} from '@/spy';
 import {MockEventEmitter} from '..';
 
-export class MockServiceContainer
+export const MockServiceContainer = class MockServiceContainer
   extends MockEventEmitter
   implements Micra.ServiceContainer
 {
@@ -28,4 +28,4 @@ export class MockServiceContainer
       }
     };
   }
-}
+};
