@@ -1,6 +1,7 @@
 import faker from '@micra/faker/complete';
 import {MockEventEmitter} from '@/event-emitter';
 import {fn} from '@/spy';
+import type {Static} from '@micra/core/utilities/Static';
 
 export const EnvironmentSetEventFactory = faker.factory<
   Micra.EnvironmentEvents['set']
@@ -22,4 +23,18 @@ export const MockEnvironment = class MockEnvironment
   init = fn();
   initSync = fn();
   validate = fn();
+  /**
+   * It allows you to pass custom mocked functions which will be set to the instance.
+   *
+   * @param partial Partial of the Micra.Environment
+   * @returns Static Micra.Environment
+   */
+  static with(partial: Micra.Environment): Static<Micra.Environment> {
+    return class ExtendedMockEnvironment extends MockEnvironment {
+      constructor() {
+        super();
+        Object.assign(this, partial);
+      }
+    };
+  }
 };

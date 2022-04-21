@@ -2,3 +2,4 @@
 /// <reference types="@micra/core/environment" />
 /// <reference types="@micra/core/event-emitter" />
 /// <reference types="@micra/core/namespaces" />
+/// <reference types="@micra/core/service-provider" />
