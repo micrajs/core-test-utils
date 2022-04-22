@@ -11,6 +11,58 @@
   "bugs": {
     "url": "https://github.com/micrajs/community/issues?q=is:issue+is:open+label:%22Project:+core-test-utils%22+label:%22Type:+fix%22"
   },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./environment": {
+      "import": "./environment/index.mjs",
+      "require": "./environment/index.js",
+      "types": "./environment/index.d.ts"
+    },
+    "./application": {
+      "import": "./application/index.mjs",
+      "require": "./application/index.js",
+      "types": "./application/index.d.ts"
+    },
+    "./configuration": {
+      "import": "./configuration/index.mjs",
+      "require": "./configuration/index.js",
+      "types": "./configuration/index.d.ts"
+    },
+    "./error": {
+      "import": "./error/index.mjs",
+      "require": "./error/index.js",
+      "types": "./error/index.d.ts"
+    },
+    "./event-emitter": {
+      "import": "./event-emitter/index.mjs",
+      "require": "./event-emitter/index.js",
+      "types": "./event-emitter/index.d.ts"
+    },
+    "./kernel": {
+      "import": "./kernel/index.mjs",
+      "require": "./kernel/index.js",
+      "types": "./kernel/index.d.ts"
+    },
+    "./service-container": {
+      "import": "./service-container/index.mjs",
+      "require": "./service-container/index.js",
+      "types": "./service-container/index.d.ts"
+    },
+    "./service-provider": {
+      "import": "./service-provider/index.mjs",
+      "require": "./service-provider/index.js",
+      "types": "./service-provider/index.d.ts"
+    },
+    "./spy": {
+      "import": "./spy/index.mjs",
+      "require": "./spy/index.js",
+      "types": "./spy/index.d.ts"
+    }
+  },
   "scripts": {
     "build:code": "vite build --config .viterc.ts",
     "build:types": "tsc -p tsconfig.json && tsc-alias --silent -p tsconfig.json --dir .",

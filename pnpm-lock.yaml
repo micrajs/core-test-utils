@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@commitlint/cli': ^16.2.1
   '@micra/commit-lint-config': next
-  '@micra/core': ^0.1.0-next.11
+  '@micra/core': next
   '@micra/eslint-config': next
   '@micra/faker': next
   '@micra/typescript-config': next
