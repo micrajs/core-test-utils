@@ -1,3 +1,4 @@
+/// <reference types="@micra/core/environment" />
 import faker from '@micra/faker/complete';
 import {MockEventEmitter} from '../event-emitter';
 import {fn} from '../spy';

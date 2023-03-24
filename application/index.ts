@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
+/// <reference types="@micra/core/application" />
 import {MockConfiguration} from '../configuration';
 import {MockEnvironment} from '../environment';
 import {MockEventEmitter} from '../event-emitter';

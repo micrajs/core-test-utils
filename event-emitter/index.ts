@@ -1,3 +1,4 @@
+/// <reference types="@micra/core/event-emitter" />
 import {fn} from '../spy';
 import {Constructor} from '@micra/core/utilities/Constructor';
 

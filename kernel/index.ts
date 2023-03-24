@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
+/// <reference types="@micra/core/kernel" />
 import type {Constructor} from '@micra/core/utilities/Constructor';
 import {fn} from '../spy';
 

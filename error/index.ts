@@ -1,3 +1,4 @@
+/// <reference types="@micra/core/error" />
 import faker from '@micra/faker/complete';
 import {fn} from '../spy';
 import {Constructor} from '@micra/core/utilities/Constructor';
@@ -56,7 +57,7 @@ export const MockValidationError = class MockValidationError<
     Object.setPrototypeOf(this, MockValidationError.prototype);
   }
 
-  statusCode: 422 = 422;
+  statusCode = 422 as const;
   hasAny = fn();
   has = fn();
   get = fn();

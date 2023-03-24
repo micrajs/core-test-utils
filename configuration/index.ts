@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
+/// <reference types="@micra/core/configuration" />
 import {fn} from '../spy';
 import type {Constructor} from '@micra/core/utilities/Constructor';
 import {MockEventEmitter} from '../event-emitter';
