@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import type {Static} from '@micra/core/utilities/Static';
-import {fn} from '@/spy';
+import type {Constructor} from '@micra/core/utilities/Constructor';
+import {fn} from '../spy';
 
 export const MockAsyncKernel = class MockAsyncKernel implements Micra.Kernel {
   run = fn(async () => {});
   boot = fn(async () => {});
-  static with(partial: Micra.Kernel): Static<Micra.Kernel> {
+  static with(partial: Micra.Kernel): Constructor<Micra.Kernel> {
     return class ExtendedMockAsyncKernel extends MockAsyncKernel {
       constructor() {
         super();
@@ -22,9 +22,9 @@ export const MockKernel = class MockKernel implements Micra.Kernel {
    * It allows you to pass custom mocked functions which will be set to the instance.
    *
    * @param partial Partial of the Micra.Kernel
-   * @returns Static Micra.Kernel
+   * @returns Constructor Micra.Kernel
    */
-  static with(partial: Micra.Kernel): Static<Micra.Kernel> {
+  static with(partial: Micra.Kernel): Constructor<Micra.Kernel> {
     return class ExtendedMockKernel extends MockKernel {
       constructor() {
         super();

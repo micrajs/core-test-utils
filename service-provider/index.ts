@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import type {Static} from '@micra/core/utilities/Static';
-import {fn} from '@/spy';
+import type {Constructor} from '@micra/core/utilities/Constructor';
+import {fn} from '../spy';
 
 export const MockServiceProvider = class MockServiceProvider
   implements Micra.ServiceProvider
@@ -11,9 +11,11 @@ export const MockServiceProvider = class MockServiceProvider
    * It allows you to pass custom mocked functions which will be set to the instance.
    *
    * @param partial Partial of the Micra.ServiceProvider
-   * @returns Static Micra.ServiceProvider
+   * @returns Constructor Micra.ServiceProvider
    */
-  static with(partial: Micra.ServiceProvider): Static<Micra.ServiceProvider> {
+  static with(
+    partial: Micra.ServiceProvider,
+  ): Constructor<Micra.ServiceProvider> {
     return class ExtendedMockServiceProvider extends MockServiceProvider {
       constructor() {
         super();
@@ -32,9 +34,11 @@ export const MockAsyncServiceProvider = class MockAsyncServiceProvider
    * It allows you to pass custom mocked functions which will be set to the instance.
    *
    * @param partial Partial of the Micra.ServiceProvider
-   * @returns Static Micra.ServiceProvider
+   * @returns Constructor Micra.ServiceProvider
    */
-  static with(partial: Micra.ServiceProvider): Static<Micra.ServiceProvider> {
+  static with(
+    partial: Micra.ServiceProvider,
+  ): Constructor<Micra.ServiceProvider> {
     return class ExtendedMockAsyncServiceProvider extends MockAsyncServiceProvider {
       constructor() {
         super();

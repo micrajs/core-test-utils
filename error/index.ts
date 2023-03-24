@@ -1,6 +1,6 @@
 import faker from '@micra/faker/complete';
-import {fn} from '@/spy';
-import {Static} from '@micra/core/utilities/Static';
+import {fn} from '../spy';
+import {Constructor} from '@micra/core/utilities/Constructor';
 
 export const ErrorMessageFactory = faker.factory<Micra.ErrorMessage>(
   (fake) => ({
@@ -33,9 +33,9 @@ export const MockError = class MockError implements Micra.Error {
    * It allows you to pass custom mocked functions which will be set to the instance.
    *
    * @param partial Partial of the Micra.Error
-   * @returns Static Micra.Error
+   * @returns Constructor Micra.Error
    */
-  static with(partial: Micra.Error): Static<Micra.Error> {
+  static with(partial: Micra.Error): Constructor<Micra.Error> {
     return class ExtendedMockError extends MockError {
       constructor() {
         super();

@@ -1,5 +1,5 @@
-import {fn} from '@/spy';
-import {Static} from '@micra/core/utilities/Static';
+import {fn} from '../spy';
+import {Constructor} from '@micra/core/utilities/Constructor';
 
 export const MockEventEmitter = class MockEventEmitter
   implements Micra.EventEmitter
@@ -11,9 +11,9 @@ export const MockEventEmitter = class MockEventEmitter
    * It allows you to pass custom mocked functions which will be set to the instance.
    *
    * @param partial Partial of the Micra.EventEmitter
-   * @returns Static Micra.EventEmitter
+   * @returns Constructor Micra.EventEmitter
    */
-  static with(partial: Micra.EventEmitter): Static<Micra.EventEmitter> {
+  static with(partial: Micra.EventEmitter): Constructor<Micra.EventEmitter> {
     return class ExtendedMockEventEmitter extends MockEventEmitter {
       constructor() {
         super();

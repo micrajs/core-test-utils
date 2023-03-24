@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import {MockConfiguration} from '@/configuration';
-import {MockEnvironment} from '@/environment';
-import {MockEventEmitter} from '@/event-emitter';
-import {MockKernel} from '@/kernel';
-import {MockServiceContainer} from '@/service-container';
-import {fn} from '@/spy';
-import type {Static} from '@micra/core/utilities/Static';
+import {MockConfiguration} from '../configuration';
+import {MockEnvironment} from '../environment';
+import {MockEventEmitter} from '../event-emitter';
+import {MockKernel} from '../kernel';
+import {MockServiceContainer} from '../service-container';
+import {fn} from '../spy';
+import type {Constructor} from '@micra/core/utilities/Constructor';
 
 export const MockApplication = class MockApplication
   extends MockEventEmitter
@@ -22,13 +22,16 @@ export const MockApplication = class MockApplication
   runSync = fn();
   start = fn(async () => {});
   startSync = fn();
+  globals = {app: false, use: false, config: false, env: false};
+  terminate = fn();
+  createScope = fn();
   /**
    * It allows you to pass custom mocked functions which will be set to the instance.
    *
    * @param partial Partial of the Micra.Application
-   * @returns Static Micra.Application
+   * @returns Constructor Micra.Application
    */
-  static with(partial: Micra.Application): Static<Micra.Application> {
+  static with(partial: Micra.Application): Constructor<Micra.Application> {
     return class ExtendedMockApplication extends MockApplication {
       constructor() {
         super();
