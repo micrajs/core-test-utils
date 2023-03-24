@@ -1,6 +1,6 @@
 {
   "name": "@micra/core-test-utils",
-  "version": "0.1.0-next.5",
+  "version": "0.1.0-next.6",
   "description": "Mocked implementation of Micra's core interfaces",
   "repository": {
     "type": "git",
